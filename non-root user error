@@ -1,0 +1,16 @@
+Allowing Non-Root Users to Use Docker on GitHub - Resolving Permissions Issue
+1. This process enables non-root users to run Docker commands on a system by adding them to the Docker group. By default, Docker requires root privileges to run, which can lead to permissions issues for non-root users trying to interact with Docker. The issue occurs because Docker commands interact with the Docker daemon, which only grants access to the root user or users with explicit permissions.
+   By adding a user to the docker group, the user gains the necessary privileges to manage Docker containers and images without needing to use sudo for each Docker command. This solution improves both security (by avoiding the need to give users full root access) and usability (by enabling non-root users to interact with Docker more seamlessly).
+2. The Issue:
+   Non-root users often encounter permission errors such as:
+    docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.41/info: dial unix /var/run/docker.sock: connect: permission denied.
+3. Create the docker group.
+   $sudo groupadd docker
+4. Add your user to the docker group.
+   $sudo usermod -aG docker $USER
+5. Log out and log back in so that your group membership is re-evaluated.
+   Note:     If you're running Linux in a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
+6. You can also run the following command to activate the changes to groups:
+   $newgrp docker
+7. Verify that you can run docker commands without sudo.
+   $docker run hello-world
