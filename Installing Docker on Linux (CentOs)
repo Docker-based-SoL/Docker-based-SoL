@@ -1,0 +1,13 @@
+This repository is dedicated to helping you get started with Docker by focusing on the correct installation methods for both Linux. In this repo, we'll ensure that you install Docker directly from the official website and avoid using package managers like snap, which can sometimes lead to security vulnerabilities over time.
+What You'll Find Here:
+  Step-by-step installation guides for Docker on Linux and macOS, using methods recommended by Docker's official documentation.
+1. Installing Docker on Linux (CentOs)
+   Install the dnf-plugins-core package (which provides the commands to manage your DNF repositories) and set up the repository.
+   $sudo dnf -y install dnf-plugins-core
+   $sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+2.To install the latest version, run:
+   $sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+3.Start Docker Engine.
+   $sudo systemctl enable --now docker
+4.Verify that the installation is successful by running the hello-world image.
+   $sudo docker run hello-world
