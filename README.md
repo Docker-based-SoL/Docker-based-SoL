@@ -6,7 +6,7 @@ I am passionate about containerization, cloud computing, and DevOps. Here you'll
 
 Here are some important Docker-related resources and projects that I would like to share:
 
-### [Docker Basics](https://github.com/Docker-based-SoL/docker-basics](https://github.com/Docker-based-SoL/Docker-based-SoL)
+### [Docker Basics](https://github.com/Docker-based-SoL/Docker-based-SoL)
 A repository that covers the basics of Docker, including installation, basic commands, and creating your first container.
 
 ### [Docker Compose Examples](https://github.com/Docker-based-SoL/docker-compose-examples)
